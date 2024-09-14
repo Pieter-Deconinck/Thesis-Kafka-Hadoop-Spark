@@ -1,0 +1,82 @@
+<configuration>
+
+  <!-- Hosting config -->
+  <property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>master.example.com</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.bind-host</name>
+    <value>0.0.0.0</value>
+  </property>  
+
+  <property>
+    <name>yarn.nodemanager.hostname</name>
+    <value>0.0.0.0</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.bind-host</name>
+    <value>0.0.0.0</value>
+  </property>  
+  
+  <!-- Kerberos config -->
+  <property>
+    <name>yarn.resourcemanager.principal</name>
+    <value>yarn/master.example.com@EXAMPLE.COM</value>
+  </property>
+    <property>
+    <name>yarn.resourcemanager.keytab</name>
+    <value>/home/vagrant/hadoop/etc/hadoop/yarn.master.keytab</value>
+  </property>
+
+  <property>
+      <name>yarn.nodemanager.principal</name>
+      <value>yarn/slave.example.com@EXAMPLE.COM</value>
+  </property>
+  <property>
+      <name>yarn.nodemanager.keytab</name>
+      <value>/home/vagrant/hadoop/etc/hadoop/yarn.slave.keytab</value>
+  </property>
+
+  <property>
+      <name>yarn.nodemanager.keytab</name>
+      <value>/home/vagrant/hadoop/etc/hadoop/yarn.slave.keytab</value>
+  </property>
+
+  <!-- NodeManager auxiliary services -->
+  <property>
+      <name>yarn.nodemanager.aux-services</name>
+      <value>mapreduce_shuffle</value>
+  </property>
+  <property>
+      <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+      <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+  </property>
+    
+  <!-- Resource allocation settings -->
+  <property>
+      <name>yarn.nodemanager.resource.cpu-vcores</name>
+      <value>2</value>
+  </property>
+  <property>
+      <name>yarn.nodemanager.resource.memory-mb</name>
+      <value>2048</value>
+  </property>
+  <property>
+      <name>yarn.scheduler.minimum-allocation-mb</name>
+      <value>512</value>
+  </property>
+  <property>
+      <name>yarn.scheduler.maximum-allocation-mb</name>
+      <value>2048</value>
+  </property>
+  
+    <!-- Application Timeout -->
+  <property>
+      <name>yarn.resourcemanager.application.timeout-ms</name>
+      <value>18000</value> <!-- This sets the timeout to 1 hour -->
+      <description>Specifies the timeout in milliseconds after which the ResourceManager kills the application. Set to -1 for no timeout.</description>
+  </property>
+
+</configuration>
+

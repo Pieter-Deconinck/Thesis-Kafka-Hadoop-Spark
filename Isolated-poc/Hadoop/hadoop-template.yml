@@ -1,0 +1,66 @@
+---
+# Creating the global variables for all the containers
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hadoop-config
+data:
+  CORE_CONF_fs_defaultFS: "hdfs://localhost:9000"
+  CORE_CONF_hadoop_http_staticuser_user: "root"
+  CORE_CONF_hadoop_proxyuser_hue_hosts: "*"
+  CORE_CONF_hadoop_proxyuser_hue_groups: "*"
+  CORE_CONF_io_compression_codecs: "org.apache.hadoop.io.compress.SnappyCodec"
+  HDFS_CONF_dfs_webhdfs_enabled: "true"
+  HDFS_CONF_dfs_permissions_enabled: "false"
+  HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check: "false"
+
+---
+# Creating the hadoop containers within a pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hadoop-pod
+  labels:
+    app: hadoop-pod
+spec:
+  containers:
+    - name: ssh
+      image: weas/ubuntu-hadoop
+
+    - name: namenode
+      image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+      envFrom:
+        - configMapRef:
+            name: hadoop-config
+      env:
+        - name: CLUSTER_NAME
+          value: "test"
+
+    - name: datanode1
+      image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+      envFrom:
+        - configMapRef:
+            name: hadoop-config
+      env:
+        - name: SERVICE_PRECONDITION
+          value: "localhost:9000"
+
+
+---
+# Create service to reach the hadoop containers in the pod
+apiVersion: v1
+kind: Service
+metadata:
+  name: hadoop-service
+spec:
+  type: NodePort
+  ports:
+    - name: hadoop-port
+      port: 9870
+      targetPort: 9870
+    - name: ssh-port
+      port: 5022
+      targetPort: 22
+  selector:
+    app: hadoop-pod
+

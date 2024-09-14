@@ -1,0 +1,69 @@
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///home/vagrant/hadoop/dfs/name</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///home/vagrant/hadoop/dfs/data</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.kerberos.principal</name>
+        <value>hdfs/master.example.com@EXAMPLE.COM</value>
+    </property>
+    <property>
+        <name>dfs.datanode.kerberos.principal</name>
+        <value>hdfs/slave.example.com@EXAMPLE.COM</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.keytab.file</name>
+        <value>/home/vagrant/hadoop/etc/hadoop/hdfs.master.keytab</value>
+    </property>
+    <property>
+        <name>dfs.datanode.keytab.file</name>
+        <value>/home/vagrant/hadoop/etc/hadoop/hdfs.slave.keytab</value>
+    </property>
+
+    <property>
+        <name>dfs.datanode.address</name>
+        <value>0.0.0.0:1004</value>
+    </property>
+    <property>
+        <name>dfs.datanode.http.address</name>
+        <value>0.0.0.0:1006</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address</name>
+        <value>master.example.com:9000</value>
+    </property>
+    <property>
+        <name>dfs.namenode.http-address</name>
+        <value>master.example.com:9870</value>
+    </property>
+
+    <!-- Don't know if this is needed -->
+    <property>
+        <name>dfs.block.access.token.enable</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>dfs.block.access.token.lifetime</name>
+        <value>600000</value>
+    </property>
+    <property>
+        <name>dfs.block.access.key.update.interval</name>
+        <value>900000</value>
+    </property>
+    <property>
+        <name>dfs.block.access.token.key.update.interval</name>
+        <value>450000</value>
+    </property>
+</configuration>
