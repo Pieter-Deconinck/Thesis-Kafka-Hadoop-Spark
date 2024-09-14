@@ -1,8 +1,8 @@
-# Thesis: Efficient, Secure, and Scalable Implementation of Hadoop, Spark, and Kafka
+# Thesis: Efficient, Secure, and Scalable Implementation of Kafka, Hadoop, and Spark
 
 ## Overview
 
-This repository contains all the code, configurations, and proof-of-concepts developed as part of my bachelor's thesis project at [Hogeschool Gent (HOGENT)](https://www.hogent.be/en/). The focus of the thesis is on implementing an efficient, secure, scalable, reproducible, and loggable infrastructure for Hadoop, Spark, and Kafka within the [Virtual IT Company (VIC)](https://vichogent.be/) datacenter at HOGENT.
+This repository contains all the code, configurations, and proof-of-concepts developed as part of my bachelor's thesis project at [Hogeschool Gent (HOGENT)](https://www.hogent.be/en/). The focus of the thesis is on implementing an efficient, secure, scalable, reproducible, and loggable infrastructure for Kafka, Hadoop, and Spark within the [Virtual IT Company (VIC)](https://vichogent.be/) datacenter at HOGENT.
 
 The goal of this project is to shift the installation and management of these tools from individual student laptops to a centralized environment in the VIC datacenter. This would result in a more efficient use of time during lessons and exams, offering a real-world infrastructure experience for students.
 
