@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains all the code, configurations, and proof-of-concepts developed as part of my bachelor's thesis project at Hogeschool Gent (HOGENT). The focus of the thesis is on implementing an efficient, secure, scalable, reproducible, and loggable infrastructure for Hadoop, Spark, and Kafka within the Virtual IT Company (VIC) datacenter at HOGENT.
+This repository contains all the code, configurations, and proof-of-concepts developed as part of my bachelor's thesis project at [Hogeschool Gent (HOGENT)](https://www.hogent.be/en/). The focus of the thesis is on implementing an efficient, secure, scalable, reproducible, and loggable infrastructure for Hadoop, Spark, and Kafka within the [Virtual IT Company (VIC)](https://vichogent.be/) datacenter at HOGENT.
 
 The goal of this project is to shift the installation and management of these tools from individual student laptops to a centralized environment in the VIC datacenter. This would result in a more efficient use of time during lessons and exams, offering a real-world infrastructure experience for students.
 
@@ -19,6 +19,8 @@ The repository is structured as follows:
   - `Hadoop-Spark-Master/`: Master node configuration for Hadoop and Spark in a shared environment.
   - `Hadoop-Spark-Slave/`: Slave node configuration for the shared environment.
   - `Kerberos/`: Setup for Kerberos authentication in the shared environment.
+  - `Kafka/`: node configuration for Kafka in a shared environment.
+  - `Client/`: Setup for client machine in the shared environment.
 
 - **`LICENSE`**: Licensing information for this project.
 - **`README.md`**: You're reading it!
@@ -34,16 +36,15 @@ The repository is structured as follows:
 
 ## Author
 
-Pieter Deconinck  
+Pieter Deconinck [LinkedIn](https://www.linkedin.com/in/pieter-deconinck-/?originalSubdomain=be)  
 Bachelor of Applied Informatics, System & Network Administrator  
-Hogeschool Gent (HOGENT)  
-[LinkedIn](https://www.linkedin.com/in/pieter-deconinck-/?originalSubdomain=be)
+[Hogeschool Gent (HOGENT)](https://www.hogent.be/en/)  
+[Virtual IT Company (VIC)](https://vichogent.be/)  
 
 ## Project Supervisors
 
 - **Martijn Saelens** (Promoter)
 - **Stijn Lievens** (Co-promoter)
-
 
 ## License
 
